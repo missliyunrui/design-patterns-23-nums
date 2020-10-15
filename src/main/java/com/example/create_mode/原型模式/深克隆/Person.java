@@ -22,12 +22,12 @@ public class Person implements Cloneable {
     @Override
     protected Person clone() {
         try {
-            Person clone = (Person) super.clone();
-            List<String> fr = new ArrayList<>();
+            Person clone = (Person) super.clone();  //浅克隆
+            List<String> fr = new ArrayList<>(); //如果要深克隆，就要重写引用对象
             friends.forEach(f -> fr.add(f));
             clone.setFriends(fr);
             return clone;
-//            return (Person) super.clone();
+            //return (Person) super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
