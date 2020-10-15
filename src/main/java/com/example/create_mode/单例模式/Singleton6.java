@@ -2,6 +2,8 @@ package com.example.create_mode.单例模式;
 
 /**
  * 双重检查[推荐用]
+ * 以保证同时只有一个线程走到第二个判空代码中去，这样保证了只创建 一个实例。
+ * 这里还用到了volatile关键字来修饰singleton，其最关键的作用是防止指令重排。
  */
 public class Singleton6 {
     private static volatile Singleton6 singleton;
